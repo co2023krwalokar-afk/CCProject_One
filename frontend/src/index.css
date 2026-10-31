@@ -324,7 +324,7 @@ body {
 }
 
 .btn--primary {
-  background: var(--primary);
+  background: #C0C0C0;
   color: #fff;
   padding: 13px 28px;
 }
