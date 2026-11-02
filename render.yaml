@@ -1,0 +1,18 @@
+# Render Blueprint — deploys the Express API as a Docker container
+services:
+  - type: web
+    name: student-backend-container
+    runtime: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    branch: main
+    autoDeploy: true
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      # Set these in the Render dashboard (not stored in Git)
+      - key: MONGODB_URI
+        sync: false
+      - key: FRONTEND_URL
+        sync: false
